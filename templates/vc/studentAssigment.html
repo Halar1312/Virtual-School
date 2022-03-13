@@ -1,17 +1,17 @@
 {% extends 'vc/basic.html'%}
 {% load static %}
 
-{%block title%}{% endblock%}
+{% block title%}{% endblock%}
 
 
 
-{%block title_extra%}
+{% block title_extra%}
 <link rel="stylesheet" href="{% static '/css/easy-responsive-tabs.css' %}">
 <link rel="stylesheet" href="{% static '/css/mycourses.css' %}">
 
 {% endblock%}
 
-{%block css%}
+{% block css%}
 
 
 
@@ -19,7 +19,7 @@
 
 
 
-{%block body%}
+{% block body%}
 
 <header class="page-header">
   <div class="container-fluid">
@@ -102,7 +102,7 @@
 
     {% endblock%}
 
-    {%block javascript%}
+    {% block javascript%}
 
     <script src="{% static '/scipts/jquery-1.6.3.min.js' %}"></script>
     <script src="{% static '/scipts/jquery-1.9.1.min.js' %}"></script>

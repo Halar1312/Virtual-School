@@ -86,7 +86,7 @@
           <div class="navbar-holder d-flex align-items-center justify-content-between">
             <!-- Navbar Header-->
             <div class="navbar-header">
-              <!-- Navbar Brand --><a href="" class="navbar-brand d-none d-sm-inline-block">
+              <!-- Navbar Brand --><a href="#" class="navbar-brand d-none d-sm-inline-block">
                 <div class="brand-text d-none d-lg-inline-block"><span>Virtual </span><strong>School</strong></div>
                 <div class="brand-text d-none d-sm-inline-block d-lg-none"><strong>BD</strong></div>
               </a>
@@ -171,7 +171,7 @@
       <!-- Side Navbar -->
       <nav class="side-navbar">
         <!-- Sidebar Header-->
-        <div class="sidebar-header d-flex align-items-center"><a href="pages-profile.html">
+        <div class="sidebar-header d-flex align-items-center"><a href="">
             <!-- <div class="avatar"><img src="{{request.user.student.profile_pic.url}}" alt="..." class="img-fluid rounded-circle"></div> -->
             <div class="avatar"><img src="{{students.profile_pic.url}}" alt="..." class="img-fluid rounded-circle"></div>
 
@@ -186,7 +186,7 @@
             <p>
           </div>
         </div>
-        <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+        {% comment %} <!-- Sidebar Navidation Menus--><span class="heading">Main</span> {% endcomment %}
         <ul class="list-unstyled">
           <li class="active"><a href="/newstudenthome"> <i class="icon-home"></i>Home </a></li>
           <!-- <li class="active"><a href="/rooms/{{'twilio-chat'}}"> <i class="icon-home"></i>Group chat </a></li> -->
