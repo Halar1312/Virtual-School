@@ -1,0 +1,37 @@
+pip install cmake
+pip install dlib
+http://localhost/phpmyadmin/index.php?route=/database/structure&server=1&db=vc
+http://127.0.0.1:8000/startcall/?%E2%80%9Dusername%E2%80%9D=uzair
+venv\Scripts\activate
+
+python manage.py runserver
+
+drop table lecture;
+drop table course_offer;
+drop table courses;
+drop table assignment;
+drop table student;
+drop table teacher;
+drop table document;
+drop table registered_course;
+
+python manage.py createsuperuser
+
+virtualclassroom
+12345
+virtualclassroom@gmail.com
+ 
+INSERT INTO `course`( `courseCode`, `name`, `credits`, `description`, `teacherId`) VALUES ('CS-501','Operating System','3','Basics of Operating System','1');
+
+INSERT INTO `course`( `courseCode`, `name`, `credits`, `description`, `teacherId`) VALUES ('MG-501','Programming Fundamentals','3','Basics of Programming Fundamentals','1');
+
+INSERT INTO `course`( `courseCode`, `name`, `credits`, `description`, `teacherId`) VALUES ('CS-503','OOP','3','Basics of OOP','1');
+
+SELECT * from `course` where couseId IN (SELECT courseId FROM `registeredstudents` WHERE studentId=1);
+
+http://127.0.0.1:8000/startcall/
+
+03170676545
+
+cd desktop
+python cl.py

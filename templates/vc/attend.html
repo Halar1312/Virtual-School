@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+{% csrf_token %}
+
+<html>
+
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+
+  <script>
+    var vidElement = null;
+
+    function start() {
+      var camAvailable = navigator.mediaDevices && navigator.mediaDevices.getUserMedia;
+      if (camAvailable) {
+        vidElement = document.getElementById("vid");
+        navigator.mediaDevices.getUserMedia({
+          video: true
+        }).then(function(stream) {
+          vidElement.srcObject = stream;
+          vidElement.play();
+        });
+      }
+    }
+
+    function stop() {
+      vidElement.pause();
+    }
+
+    function snap() {
+      var canvas = document.querySelector('canvas');
+      var context = canvas.getContext('2d');
+      context.drawImage(vidElement, 0, 0, 480, 330);
+      var dataURI = canvas.toDataURL('image/jpeg');
+
+      var a = document.createElement('a');
+      a.setAttribute('download', 'test' + '.png');
+      a.setAttribute('href', dataURI);
+      a.click();
+
+
+
+      // alert(dataURI);
+
+      // $.ajax({
+      //   type: 'POST',
+      //   url: '{% url "attendancePic" %}',
+      //   data: {
+      //
+      //   },
+      //   success: function(json) {
+      //
+      //   },
+      //   error: function(xhr, errmsg, err) {
+      //
+      //   }
+      // });
+      //
+      // data.append('recorded_audio', myFile);
+      // data = ["apple", "banana", "cherry"]
+      //
+      // var csrf = $('input[name="csrfmiddlewaretoken"]').val();
+      //
+      // data.append('csrfmiddlewaretoken', csrf);
+      // var oid = "{{object.id}}"
+      // data.append('oid', oid)
+
+      function getCookie(c_name) {
+        if (document.cookie.length > 0) {
+          c_start = document.cookie.indexOf(c_name + "=");
+          if (c_start != -1) {
+            c_start = c_start + c_name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) c_end = document.cookie.length;
+            return unescape(document.cookie.substring(c_start, c_end));
+          }
+        }
+        return "";
+      }
+
+      var data = {
+        action: 'my_action',
+        whatever: 1234
+      };
+      // $.ajax({
+      //   url: "{% url 'attendancePic' %}",
+      //   method: 'GET',
+      //   headers: {
+      //     "X-CSRFToken": getCookie("csrftoken")
+      //   },
+      //
+      //   data: {
+      //     data
+      //   },
+      //   dataType: 'json',
+      //
+      //   // processData: false,
+      //   // contentType: false,
+      //   success: function(json) {
+      //     alert("Done")
+      //   },
+      //   error: function(xhr, errmsg, err) {
+      //
+      //   }
+      // });
+
+      $.ajax({
+        url: "{% url 'attendancePic' %}",
+        data: {
+          'username': dataURI
+
+        },
+        dataType: 'json',
+        success: function(data) {
+          if (data.is_taken) {
+            alert("A user with this username already exists.");
+          }
+        }
+      });
+    }
+  </script>
+  <title>
+    webcam wali sarkar
+  </title>
+</head>
+
+<body bgcolor="skyblue">
+  <style>
+  </style>
+  <video id="vid" autoplay style="width:300px;height:250px;border:1px solid black">
+  </video>
+  <div>
+    <button onclick="start();">Start</button>
+    <button onclick="stop();"> Stop</button>
+  </div>
+  <canvas id="canvas" width="600" height="300"></canvas>
+  <button id="snap" onclick="snap()">Snapshot</button>
+
+</body>
+
+</html>

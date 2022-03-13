@@ -1,0 +1,241 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Muhammad Uzair Ibrar} \\ \vspace{1pt}
+    \textbf{E-11, Islamabad, Pakisatan}\\ \vspace{1pt}
+    \small +92-316-1720618 $|$ \href{mailto:x@x.com}{\underline{uxair.ibrar@gmail.com}} $|$ 
+    \href{https://linkedin.com/in/...}{\underline{linkedin.com/in/muhammad-uzair-046535200/}} $|$
+    \href{https://github.com/...}{\underline{github.com/uxairibrar}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {FAST NUCES}{Islamabad, Pakistan}
+      {Bachelor of Science in Computer Science}{Aug. 2017 -- July 2021}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {JAVA Intern}{June 2019 -- August 2019}
+      {Service Symphony}{Islamabad, Pakistan}
+      \resumeItemListStart
+        \resumeItem{Contributed to software design and development using spring framework; understanding the overall software development lifecycle}
+      \resumeItemListEnd
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+    \resumeSubheading
+      {DATA SCIENCE AND BUSINESS ANALYTIC Intern}{April 2020 -- May 2020}
+      {The Spark Foundation}{Remote}
+      \resumeItemListStart
+        \resumeItem{Worked on different projects of data science and business analytic which includes Supervised Learning, Unsupervised Learning Models}
+        \resumeItem{Terrorism Detection, Superstore Data Analysis, Decision Tree Models, Clustering}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{FYP: Virtual School} $|$ \emph{Python, Django, MySQL, Twilio Api}}{}
+          \resumeItemListStart
+            \resumeItem{Web platform used to host classes remotely, advancing the functionality of available classrooms by introducing eye tracking for student engagement and facial recognition for presence}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Hindi-English Sentimental Analysis} $|$ \emph{Python, NLP}}{}
+          \resumeItemListStart
+            \resumeItem{A system trained on the Hindi-English twitter dataset to predict whether a tweet is
+            positive,negative, or normal.}
+           
+          \resumeItemListEnd
+        \resumeProjectHeading
+          {\textbf{Building and Analysing Data Warehouse Prototype for METRO Shopping Store} $|$ \emph{Java, Data-Warehousing}}{}
+          \resumeItemListStart
+            \resumeItem{Building and Analysing Data Warehouse Prototype for METRO Shopping Store.}
+          \resumeItemListEnd
+          
+         \resumeProjectHeading
+          {\textbf{Camouflage Detection Using SINet Framework} $|$ \emph{Python, Deep Learning, YOLO}}{}
+          \resumeItemListStart
+            \resumeItem{Created two model for detecting Camouflage Objects from COD10K Dataset}
+            \resumeItem{One model was implemented using YOLO-v4 and other was implemented using SINet framework.}
+            \resumeItem{Accuracy Achieved from YOLO-v4 was 81 percent while SINet was 88 percent}
+          \resumeItemListEnd
+          
+          \resumeProjectHeading
+          {\textbf{Analyzing Real-World Medical Data} $|$ \emph{Python, Deep Mining}}{}
+          \resumeItemListStart
+            \resumeItem{Applying Data Mining algorithms to real-world medical datasets}
+          \resumeItemListEnd
+          
+          \resumeProjectHeading
+          {\textbf{Human Face Generation Using GANs} $|$ \emph{Python, GANs}}{}
+          \resumeItemListStart
+            \resumeItem{Created a GANs model for generating Human Faces}
+            \resumeItem{Best results achieved after 150th Epcoh}
+          \resumeItemListEnd
+          
+    \resumeSubHeadingListEnd
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Java, Python, C/C++, SQL, JavaScript, HTML/CSS} \\
+     \textbf{Frameworks}{: Django, Node.js, React, Angular, , Bootstrap, Java Spring} \\
+     \textbf{Developer Tools}{: Git, Google Colab, Kaggle, VS Code, Visual Studio, PyCharm, Eclipse} \\
+     \textbf{Libraries}{: pandas, NumPy, Matplotlib, PyTorch, TensorFlow}
+    }}
+ \end{itemize}
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Volunteering}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Yes We Can}{:  Helping underprivileged kids to receive primary education.} \\
+     \textbf{Mission of Hope}{: Focusing on an individual’s total wellness and providing him/her means of 
+making bread and butter.} \\
+    }}
+ \end{itemize}
+%-------------------------------------------
+\end{document}
+
+\section{GRANTS AND AWARDS}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Punjab Educational Endowment Fund (PEEF)}{:  Partially supporting the Bachelors studies.} \\
+    }}
+ \end{itemize}
+%-------------------------------------------
+\end{document}

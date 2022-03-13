@@ -1,0 +1,161 @@
+{% extends 'vc/basic.html'%}
+{% load static %}
+
+{%block title%}{% endblock%}
+
+
+
+{%block title_extra%}
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+
+
+<script>
+  var vidElement = null;
+
+  function start() {
+    var camAvailable = navigator.mediaDevices && navigator.mediaDevices.getUserMedia;
+    if (camAvailable) {
+      vidElement = document.getElementById("vid");
+      navigator.mediaDevices.getUserMedia({
+        video: true
+      }).then(function(stream) {
+        vidElement.srcObject = stream;
+        vidElement.play();
+      });
+    }
+  }
+
+  function stop() {
+    vidElement.pause();
+  }
+
+  function snap() {
+    var canvas = document.querySelector('canvas');
+    var context = canvas.getContext('2d');
+    context.drawImage(vidElement, 0, 0, 480, 330);
+    var dataURI = canvas.toDataURL('image/jpeg');
+
+    var a = document.createElement('a');
+    a.setAttribute('download', 'test' + '.png');
+    a.setAttribute('href', dataURI);
+    a.click();
+
+    // alert("Showing base 64");
+    // alert(atob(a));
+
+    // html2canvas(screenshotTarget).then((canvas) => {
+    //   const base64image = canvas.toDataURL("image/png");
+    //   window.location.href = base64image;
+    // });
+    // reader.onload = function() {
+    //   base64String = reader.result.replace("data:", "")
+    //     .replace(/^.+,/, "");
+    //
+    //   imageBase64Stringsep = base64String;
+    //
+    //   alert("imageBase64Stringsep");
+    //   console.log(base64String);
+    // }
+    // alert("Showing");
+
+    function getCookie(c_name) {
+      if (document.cookie.length > 0) {
+        c_start = document.cookie.indexOf(c_name + "=");
+        if (c_start != -1) {
+          c_start = c_start + c_name.length + 1;
+          c_end = document.cookie.indexOf(";", c_start);
+          if (c_end == -1) c_end = document.cookie.length;
+          return unescape(document.cookie.substring(c_start, c_end));
+        }
+      }
+      return "";
+    }
+
+    var data = {
+      action: 'my_action',
+      whatever: 1234
+    };
+
+    // alert("Showing");
+
+    $.ajax({
+      url: "{% url 'attendancePic' %}",
+      data: {
+        'username': dataURI,
+      },
+      dataType: 'json',
+      success: function(data) {
+        if (data.is_taken) {
+          // alert(data.is_taken);
+          if (data.is_taken == "Matched") {
+            document.getElementById("AttendanceButton").innerHTML = "Marked Present";
+          } else if (data.is_taken == "Not Matched") {
+            document.getElementById("AttendanceButton").innerHTML = "Face Not Matched";
+          } else {
+            document.getElementById("AttendanceButton").innerHTML = "No face found";
+          }
+        }
+      }
+    });
+  }
+
+  // function videCallStarted() {
+  //   setInterval(function() {
+  //     snap();
+  //   }, 3000);
+  // }
+</script>
+
+{% endblock%}
+
+{%block css%}
+
+
+{% endblock%}
+
+
+
+{%block body%}
+
+<header class="page-header">
+  <div class="container-fluid">
+    <h2 class="no-margin-bottom">Attendance</h2>
+  </div>
+</header>
+
+{% comment %} <div style="margin-left:310px;margin-top:30px">
+  <button id="AttendanceButton" type="button" class="btn btn-primary btn-lg" style="width:430px">Click Snapshot to check attendance</button>
+  </br>
+  </br>
+
+  <table>
+    <tr>
+      <th><video id="vid" autoplay style="width:430px;height:330px;border:1px solid blue; border-radius:10px"></video></th>
+    </tr>
+
+  </table>
+
+</div>
+<div>
+  <!-- <button onclick=" start();" style="margin-left:5%">Start</button> -->
+  <button type="button" class="btn btn-primary btn-lg" onclick=" start();" style="margin:2%;margin-left:340px">Start</button>
+  <button type="button" class="btn btn-primary btn-lg" onclick="stop();" style="margin:2%"> Stop</button>
+  <button type="button" class="btn btn-primary btn-lg" id="snap" onclick="snap()" style="margin:2%">Snapshot</button>
+
+
+  <!-- <button onclick="stop();" style="margin-left:25%"> Stop</button>
+  <button id="snap" onclick="snap()" style="margin-left:25%">Snapshot</button> -->
+
+  <canvas id="canvas" width="600" height="300" style="display: none;"></canvas>
+
+
+</div> {% endcomment %}
+
+{% endblock%}
+
+{%block javascript%}
+
+
+{% endblock%}
