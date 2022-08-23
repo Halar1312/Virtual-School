@@ -9,7 +9,7 @@ class Student(models.Model):
     uname = models.CharField(max_length=40)
     email = models.CharField(max_length=40)
     password = models.CharField(max_length=40)
-    imageEncodings = models.CharField(max_length=50000)
+    imageEncodings = models.TextField(max_length=50000)
     profile_pic=models.ImageField(upload_to="",default='ahsan.jpg')
 
     def __str__(self):

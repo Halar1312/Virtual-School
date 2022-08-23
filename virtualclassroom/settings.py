@@ -109,7 +109,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'virtual_classroom',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': '12345678',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
@@ -168,7 +168,7 @@ MEDIA_URL='/images/'
 
 STATICFILES_DIRS = [
     BASE_DIR / "static",
-    '/var/www/static/',
+    # '/var/www/static/',
 ]
 
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')

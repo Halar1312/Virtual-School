@@ -1,0 +1,67 @@
+{% extends 'vc/basic.html'%}
+{% load static %}
+
+{%block title%}{% endblock%}
+
+
+
+{%block title_extra%}
+
+
+{% endblock %}
+
+{% block css %}
+
+
+{% endblock %}
+
+
+
+{% block body %}
+<!-- <div>Listing Assignments</div> -->
+<header class="page-header">
+  <div class="container-fluid">
+    <h2 class="no-margin-bottom">Course Description</h2>
+  </div>
+</header>
+<div style="padding:50px">
+
+  {% for ass in assignments %}
+
+  <div id="accordion">
+    <div class="card" style="border-radius:10px">
+      <div class="card-header" id="headingOne" style="border-radius:10px">
+        <h5 class="mb-0">
+          <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <label><b><span style="color:blue">Assignment No {{ass.assignmentNo}}</span></b></label>
+          </button>
+        </h5>
+      </div>
+
+      <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+        <div class="card-body">
+          <div>
+            <label style="font-family:Palatino, URW Palladio L, serif;"><b>Assignment Topic:-</b> {{ass.name}}</label>
+            <label style="float:right;font-family:Palatino, URW Palladio L, serif;"><b>Assignment Due Date:-</b> <span style="color:red">{{ass.dueDate}}</span></label>
+          </div>
+          <a href="{% url 'submit_assignment' ass.assignmentID%}" class="btn text-secondary px-0">
+            <button type="button" class="btn btn-primary" style="width:950px;">Submit Assignment</button>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  {% endfor %}
+</div>
+
+
+
+
+{% endblock %}
+
+{% block javascript %}
+
+
+{% endblock %}

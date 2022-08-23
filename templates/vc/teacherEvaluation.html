@@ -1,0 +1,82 @@
+{% extends 'vc/basic.html'%}
+{% load static %}
+
+{%block title%}{% endblock%}
+
+
+
+{%block title_extra%}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+{% endblock %}
+
+{% block css %}
+
+
+{% endblock %}
+
+
+
+{% block body %}
+</br>
+</br>
+<h1 style="margin-left:250px">Percentage of Presence Mean in each class</h1>
+<div style="padding:40px">
+  <p>21/07/2021</p>
+  <div class="container" style=" width: 100%;background-color: #ddd;">
+    <div class="skills html" style=" width: 90%;background-color: #04AA6D; text-align: right;padding-top: 10px;padding-bottom: 10px;color: white;">90%</div>
+  </div>
+
+  <p>23/07/2021</p>
+  <div class="container" style=" width: 100%;background-color: #ddd;">
+    <div class="skills css" style=" width: 80%;background-color: #2196F3;text-align: right;padding-top: 10px;padding-bottom: 10px;color: white;">80%</div>
+  </div>
+
+  <p>01/08/2021</p>
+  <div class="container" style=" width: 100%;background-color: #ddd;">
+    <div class="skills js" style="   width: 65%;background-color: #f44336;text-align: right;padding-top: 10px;padding-bottom: 10px;color: white;">65%</div>
+  </div>
+
+  <p>23/08/2021</p>
+  <div class="container" style=" width: 100%;background-color: #ddd;">
+    <div class="skills php" style="width: 60%;background-color: #808080;text-align: right;padding-top: 10px;padding-bottom: 10px;color: white;">60%</div>
+  </div>
+</div>
+
+<canvas id="myChart" style="width:100%;max-width:600px;margin-left:200px"></canvas>
+</br>
+<script>
+  var xValues = ["Assignment 1", "Assignment 2", "Assignment 3", "Assignment 4", "Assignment 5"];
+  var yValues = [55, 49, 44, 24, 15];
+  var barColors = [
+    "#b91d47",
+    "#00aba9",
+    "#2b5797",
+    "#e8c3b9",
+    "#1e7145"
+  ];
+
+  new Chart("myChart", {
+    type: "pie",
+    data: {
+      labels: xValues,
+      datasets: [{
+        backgroundColor: barColors,
+        data: yValues
+      }]
+    },
+    options: {
+      title: {
+        display: true,
+        text: "Total Submissions Against Assignments"
+      }
+    }
+  });
+</script>
+
+{% endblock %}
+
+{% block javascript %}
+
+
+{% endblock %}

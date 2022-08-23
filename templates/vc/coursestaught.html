@@ -1,27 +1,16 @@
 {% extends 'vc/basic.html'%}
 {% load static %}
 
-{% block title%}{% endblock%}
+{%block title%}Mycourses{% endblock%}
 
-{% block title_extra%}
-<link rel="stylesheet" href="{% static '/css/mycourses.css' %}">
-
-{% endblock %}
-
-{% block css %}
+{%block css%}
 
 
-{% endblock %}
+{% endblock%}
 
 
 
-{% block body %}
-
-<header class="page-header">
-  <div class="container-fluid">
-    <h2 class="no-margin-bottom">My Courses</h2>
-  </div>
-</header>
+{%block body%}
 
 <section id="team" class="pb-5">
   <div class="container">
@@ -29,14 +18,14 @@
     <div class="row">
       <!-- Team member -->
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
-          <div class="mainflip">
+        <div class="image-flip">
+          <div class="mainflip flip-0">
             <div class="frontside">
               <div class="card">
                 <div class="card-body text-center">
-                  <p><img class=" img-fluid" src="{% static "images/db.jpg" %}" alt="card image"></p>
-                  <h4 class="card-title">Database</h4>
-                  <p class="card-text">Collection of information, organized so that it can be easily accessed, managed and updated.</p>
+                  <p><img class=" img-fluid" src="{% static "images/cnet.jpg" %}" alt="card image"></p>
+                  <h4 class="card-title">Computer Network</h4>
+                  <p class="card-text">Computer network is a set of computers connected together for the purpose of sharing resources.</p>
                   <a href=" " class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                 </div>
               </div>
@@ -44,14 +33,29 @@
             <div class="backside">
               <div class="card">
                 <div class="card-body text-center mt-4">
-                  <h4 class="card-title">Database</h4>
+                  <h4 class="card-title">Computer Network</h4>
                   <!-- <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p> -->
                   <p class="card-text">Credit Hours: - 3</p>
-                  <p class="card-text">Course Code: - SE-204</p>
-                  <p class="card-text">Instructor: - Raheela Asif</p>
+                  <p class="card-text">Course Code: - BZ-230</p>
+                  <p class="card-text">Instructor: - Jawad Hasan</p>
                   <ul class="list-inline">
                     <li class="list-inline-item">
-                      <a class="social-icon text-xs-center" target="_blank" href="https://www.neduet.edu.pk/">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
+                        <i class="fa fa-skype"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
                         <i class="fa fa-google"></i>
                       </a>
                     </li>
@@ -83,11 +87,26 @@
                   <h4 class="card-title">Artificial Intelligence</h4>
                   <!-- <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p> -->
                   <p class="card-text">Credit Hours: - 3</p>
-                  <p class="card-text">Course Code: - SE-230</p>
-                  <p class="card-text">Instructor: - Shumaila Ashfaq</p>
+                  <p class="card-text">Course Code: - BZ-230</p>
+                  <p class="card-text">Instructor: - Jawad Hasan</p>
                   <ul class="list-inline">
                     <li class="list-inline-item">
-                      <a class="social-icon text-xs-center" target="_blank" href="https://www.neduet.edu.pk/">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
+                        <i class="fa fa-skype"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
                         <i class="fa fa-google"></i>
                       </a>
                     </li>
@@ -101,14 +120,14 @@
       <!-- ./Team member -->
       <!-- Team member -->
       <div class="col-xs-12 col-sm-6 col-md-4">
-        <div class="image-flip">
-          <div class="mainflip flip-0">
+        <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+          <div class="mainflip">
             <div class="frontside">
               <div class="card">
                 <div class="card-body text-center">
-                  <p><img class=" img-fluid" src="{% static "images/cnet.jpg" %}" alt="card image"></p>
-                  <h4 class="card-title">Computer Network</h4>
-                  <p class="card-text">Computer network is a set of computers connected together for the purpose of sharing resources.</p>
+                  <p><img class=" img-fluid" src="{% static "images/db.jpg" %}" alt="card image"></p>
+                  <h4 class="card-title">Database</h4>
+                  <p class="card-text">Collection of information, organized so that it can be easily accessed, managed and updated.</p>
                   <a href=" " class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
                 </div>
               </div>
@@ -116,14 +135,29 @@
             <div class="backside">
               <div class="card">
                 <div class="card-body text-center mt-4">
-                  <h4 class="card-title">Computer Network</h4>
+                  <h4 class="card-title">Database</h4>
                   <!-- <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p> -->
                   <p class="card-text">Credit Hours: - 3</p>
-                  <p class="card-text">Course Code: - CN-302</p>
-                  <p class="card-text">Instructor: - Shiraz</p>
+                  <p class="card-text">Course Code: - BZ-230</p>
+                  <p class="card-text">Instructor: - Jawad Hasan</p>
                   <ul class="list-inline">
                     <li class="list-inline-item">
-                      <a class="social-icon text-xs-center" target="_blank" href="https://www.neduet.edu.pk/">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
+                        <i class="fa fa-skype"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
                         <i class="fa fa-google"></i>
                       </a>
                     </li>
@@ -155,11 +189,26 @@
                   <h4 class="card-title">HCI</h4>
                   <!-- <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p> -->
                   <p class="card-text">Credit Hours: - 3</p>
-                  <p class="card-text">Course Code: - SE-202</p>
-                  <p class="card-text">Instructor: - Najmi Ghani Haider</p>
+                  <p class="card-text">Course Code: - BZ-230</p>
+                  <p class="card-text">Instructor: - Jawad Hasan</p>
                   <ul class="list-inline">
                     <li class="list-inline-item">
-                      <a class="social-icon text-xs-center" target="_blank" href="https://www.neduet.edu.pk/">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
+                        <i class="fa fa-skype"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
                         <i class="fa fa-google"></i>
                       </a>
                     </li>
@@ -191,11 +240,26 @@
                   <h4 class="card-title">Operating System</h4>
                   <!-- <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p> -->
                   <p class="card-text">Credit Hours: - 3</p>
-                  <p class="card-text">Course Code: - SE-207</p>
-                  <p class="card-text">Instructor: - Asma Khan</p>
+                  <p class="card-text">Course Code: - BZ-230</p>
+                  <p class="card-text">Instructor: - Jawad Hasan</p>
                   <ul class="list-inline">
                     <li class="list-inline-item">
-                      <a class="social-icon text-xs-center" target="_blank" href="https://www.neduet.edu.pk/">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
+                        <i class="fa fa-skype"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
                         <i class="fa fa-google"></i>
                       </a>
                     </li>
@@ -226,11 +290,26 @@
                 <div class="card-body text-center mt-4">
                   <h4 class="card-title">Computer Architecture</h4>
                   <p class="card-text">Credit Hours: - 3</p>
-                  <p class="card-text">Course Code: - SE-270</p>
-                  <p class="card-text">Instructor: - Mustafa Latif</p>
+                  <p class="card-text">Course Code: - BZ-230</p>
+                  <p class="card-text">Instructor: - Jawad Hasan</p>
                   <ul class="list-inline">
                     <li class="list-inline-item">
-                      <a class="social-icon text-xs-center" target="_blank" href="https://www.neduet.edu.pk/">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
+                        <i class="fa fa-skype"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a class="social-icon text-xs-center" target="_blank" href=" ">
                         <i class="fa fa-google"></i>
                       </a>
                     </li>
@@ -248,9 +327,3 @@
 </section>
 
 {% endblock%}
-
-
-{% block javascript %}
-
-
-{% endblock %}
