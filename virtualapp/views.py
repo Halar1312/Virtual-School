@@ -342,9 +342,10 @@ def gazeTrack(studentId):
         print("Sent Done")
         cv2.imshow("Demo", frame)
         key=cv2.waitKey(1)
-        # print(key)
+        print(key)
+        print(key%256)
         #Eye tracking will be stopped here
-        if key%256 == 27:
+        if key%256 == 255:
             print("Came in check")
             t2 = datetime.datetime.now().time() #Stopped duration
             duration = datetime.datetime.combine(date.min, t2) - datetime.datetime.combine(date.min, t1) #compare times
@@ -389,6 +390,7 @@ def gazeTrack(studentId):
                 savercrd.status = "Present"
             else:
                 savercrd.status = "Not Present"
+            print(savercrd)
             savercrd.save()
             # print(request.session.get('email'))
             break
@@ -742,7 +744,7 @@ def quiz(request):
 def room_detail(request, slug):
     print("Came in details")
     # room = Room.objects.get(slug=slug)
-    # return render(request, 'chat/onlineclass.html', {'room': room})
+    # return render(request, 'chat/onlineclass.html', {'room': "room"})
 
 def token(request):
     identity = request.GET.get('identity', fake.user_name())
@@ -863,6 +865,10 @@ def video_feed(request):
 def video_feed_teacher(request):
     print("Video feed Teacher")
     for students in Teacher.objects.raw('SELECT teacherId,email,password,uname FROM teacher'):
+        print(students.email)
+        print(request.session.get('email'))
+        print(students.password)
+        print(request.session.get('password'))
         if((students.email == request.session.get('email')) and ((students.password == request.session.get('password')))):
             studentId=students.studentId
     return StreamingHttpResponse(gazeTrackTeacher(studentId), content_type='multipart/x-mixed-replace; boundary=frame')
